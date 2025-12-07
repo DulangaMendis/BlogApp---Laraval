@@ -12,6 +12,6 @@ class HomeController extends Controller
     {
         $post = Post::all();
         // return a view named "home"
-        return view('home.homepage',compact('post'));
+        return view('home.homepage',compact(''));
     }
 }
