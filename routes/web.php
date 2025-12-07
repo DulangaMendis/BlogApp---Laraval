@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MainPanelController;
 
 Route::get('/',[HomeController::class,'homepage']);
 
@@ -24,5 +25,7 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 Route::get('/panel',function(){
     return view('mainpanel.panel');
 });
+
+Route::get('/post_page',[MainPanelController::class,'post_page']);
 
 
