@@ -66,6 +66,9 @@
                     <a href="{{url('delete_post',$post->id)}}" class="btn btn-danger">Delete</a>
 
                 </td>
+                <td>
+                    <a href="{{url('edit_page',$post->id)}}" class="btn btn-outline-success">Edit</a>
+                </td>
             </tr>
 
             @endforeach

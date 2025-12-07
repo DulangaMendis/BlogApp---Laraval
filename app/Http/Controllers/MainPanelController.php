@@ -64,5 +64,37 @@ class MainPanelController extends Controller
 
     }
 
+    public function edit_page($id)
+    {
+        $post = Post::find($id);
+
+        return view('mainpanel.edit_page' ,compact('post'));
+
+
+    }
+
+    public function update_post(Request $request, $id)
+{
+    $post = Post::find($id);
+
+    $post->title = $request->title;
+    $post->description = $request->description;
+
+    // Check if a new image was uploaded
+    if ($request->hasFile('image')) {
+
+        $image = $request->file('image');           // <-- get file object
+        $imagename = time().'.'.$image->getClientOriginalExtension();
+        $image->move('postimage', $imagename);
+
+        $post->image = $imagename;
+    }
+
+    $post->save();
+
+    return redirect()->back()->with('message', 'Post updated successfully!');
+}
+
+
 
 }
