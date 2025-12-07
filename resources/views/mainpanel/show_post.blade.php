@@ -51,6 +51,7 @@
                 <th>Post Title</th>
                 <th>Description</th>
                 <th>Image</th>
+                <th>Delete</th>
             </tr>
 
             @foreach($post as $post)
@@ -60,6 +61,10 @@
                 <td>{{$post->description}}</td>
                 <td>
                     <img class="img_deg" src="postimage/{{$post->image}}">
+                </td>
+                <td>
+                    <a href="{{url('delete_post',$post->id)}}" class="btn btn-danger">Delete</a>
+
                 </td>
             </tr>
 

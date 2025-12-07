@@ -32,4 +32,6 @@ Route::post('/add_post',[MainPanelController::class,'add_post']);
 
 Route::get('/show_post',[MainPanelController::class,'show_post']);
 
+Route::get('/delete_post/{id}',[MainPanelController::class,'delete_post']);
+
 
