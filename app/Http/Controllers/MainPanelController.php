@@ -41,4 +41,16 @@ class MainPanelController extends Controller
        $post->save();
        return redirect()->back()->with('message','Post Added Succesfully !');
     }
+
+     public function show_post()
+    {
+        $post = Post::all();
+
+
+        return view('mainpanel.show_post',compact('post'));
+
+
+    }
+
+
 }
