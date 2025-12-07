@@ -28,4 +28,6 @@ Route::get('/panel',function(){
 
 Route::get('/post_page',[MainPanelController::class,'post_page']);
 
+Route::post('/add_post',[MainPanelController::class,'add_post']);
+
 
