@@ -38,8 +38,8 @@
 
                      @auth
                      <li><x-app-layout></x-app-layout></li>
+                     <li><a href=<li><a href="{{ url('my_post') }}">My Posts</a></li></a></li>
                      <li><a href="{{url('create_post')}}">Create Post</a></li>
-                     <!-- <li><a href=<li><a href="{{ url('/') }}">Home</a></li></a></li> -->
                      @else
                      <li><a href="{{route('login')}}">LogIn</a></li>
                      <li><a href="{{route('register')}}">Register</a></li>

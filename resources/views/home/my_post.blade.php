@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+    <style type="text/css">
+
+        .post_deg{
+            padding: 30px;
+            text-align: center;
+
+        }
+        .title_deg{
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px;
+        }
+        .des_deg{
+            font-size: 14px;
+            font-weight: bold;
+            padding: 15px;
+        }
+    </style>
+      @include('home.homecss')
+   </head>
+   <body>
+      <!-- header section start -->
+      <div class="header_section">
+         @include('home.header')
+
+         <div class="post_deg">
+            <img src="">
+            <h4 class="title_deg">Post Title</h4>
+            <p class="des_deg">Post Description</p>
+         </div>
+        
+      </div>
+      <!-- footer section start -->
+      @include('home.footer')
+      <!-- footer Section End -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>    
+   </body>
+</html>

@@ -39,4 +39,9 @@ class HomeController extends Controller
        $post->save();
        return redirect()->back()->with('message','Post Added Succesfully !');
     }
+
+     public function my_post()
+    {
+        return view('home.my_post');
+    }
 }

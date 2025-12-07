@@ -30,9 +30,6 @@
       <!-- header section start -->
       <div class="header_section">
          @include('home.header')
-         <!-- banner section start -->
-         
-         <!-- banner section end -->
       </div>
 
       <div class="div_deg">
