@@ -15,3 +15,14 @@ Route::middleware([
     })->name('dashboard');
 });
 
+Route::middleware(['auth', 'verified', 'admin'])->group(function () {
+    Route::get('/admin/dashboard', function () {
+        return view('admin.admin');   // <— THIS VIEW
+    })->name('admin.dashboard');
+});
+
+Route::get('/panel',function(){
+    return view('mainpanel.panel');
+});
+
+

@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+ use Laravel\Fortify\Contracts\LoginResponse;
+
 use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
@@ -29,11 +31,27 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
         Fortify::redirectUserForTwoFactorAuthenticationUsing(RedirectIfTwoFactorAuthenticatable::class);
+
+        $this->app->singleton(LoginResponse::class, function () {
+    return new class implements LoginResponse {
+        public function toResponse($request)
+        {
+            $user = $request->user();   // <— FIX HERE
+
+                if ($user && $user->role === 'admin') {
+                    return redirect()->intended('/admin/dashboard');
+            }
+
+            return redirect()->intended('/dashboard');
+        }
+    };
+});
 
         RateLimiter::for('login', function (Request $request) {
             $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())).'|'.$request->ip());
