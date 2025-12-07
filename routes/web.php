@@ -38,4 +38,7 @@ Route::get('/edit_page/{id}',[MainPanelController::class,'edit_page']);
 
 Route::post('/update_post/{id}',[MainPanelController::class,'update_post']);
 
+Route::get('/create_post',[HomeController::class,'create_post']);
+
+Route::post('/user_post',[HomeController::class,'user_post']);
 

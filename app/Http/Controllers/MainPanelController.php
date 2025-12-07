@@ -11,14 +11,6 @@ class MainPanelController extends Controller
 {
       public function post_page()
     {
-        // @if (session()->has('message'))
-
-        // <div class ="alert alert-successfully">
-        // <button type="button" class="close" data-dismiss="alert" area-hidden="true">x</button>
-        // {{session()->get('message')}}
-        // </div>
-
-        // @endif
    
 
         return view('mainpanel.post_page'); // make sure this view exists
